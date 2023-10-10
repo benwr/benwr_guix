@@ -15,8 +15,8 @@
               (uri (string-append "https://pkgs.tailscale.com/stable/tailscale_" version
                                   "_amd64.tgz"))
               (sha256
-               (base16
-                "d9fe6b480fb5078f0aa57dace686898dda7e2a768884271159faa74846bfb576"))))
+               (base32
+		 "1wjiq7hzylv3dfkf835dwvq92ynm0afxcypiqb8n0ccbyr0wipli"))))
     (build-system copy-build-system)
     (arguments
       (list
