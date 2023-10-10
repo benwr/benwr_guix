@@ -21,7 +21,7 @@
     (arguments
       (list
         #:install-plan
-        #~`((,(string-append "tailscale_" #$version "_amd64/") "/usr/bin/"))))
+        #~`((,(string-append "tailscale_" #$version "_amd64/") "/bin/"))))
     (propagated-inputs
       ; iptables is required for setting up routing
       (list iptables))
