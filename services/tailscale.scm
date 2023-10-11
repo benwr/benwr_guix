@@ -24,7 +24,7 @@
 (define (tailscaled-activation config)
   "Run tailscaled --cleanup"
   #~(begin
-      (system* #$(file-append tailscale "/usr/bin/tailscaled") "--cleanup")))
+      (system* #$(file-append tailscale "/bin/tailscaled") "--cleanup")))
 
 (define (tailscaled-shepherd-service config)
   "Return a <shepherd-service> for Tailscaled with CONFIG"
