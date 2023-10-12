@@ -44,7 +44,7 @@
          (provision '(tailscaled))
 	 (requirement '(networking)) ;; services this depends on
          (start #~(make-forkexec-constructor
-		    (list #$(file-append tailscale "/usr/bin/tailscaled")
+		    (list #$(file-append tailscale "/bin/tailscaled")
  		     "-state" #$state-file
 		     ;"-port" #$listen-port
 		     "-verbose" "10")
