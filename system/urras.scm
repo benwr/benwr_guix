@@ -4,8 +4,6 @@
   (gnu)
   (nongnu packages linux)
   (nongnu system linux-initrd)
-  (benwr packages tailscale)
-  (benwr services tailscale)
   (guix gexp)
   (guix packages)
   (gnu services)
@@ -39,8 +37,7 @@
                           (specification->package "i3status")
                           (specification->package "dmenu")
                           (specification->package "st")
-                          (specification->package "nss-certs")
-			  (specification->package "tailscale"))
+                          (specification->package "nss-certs"))
                     %base-packages))
 
   ;; Below is the list of system services.  To search for available
@@ -49,9 +46,7 @@
    (append (list ;; To configure OpenSSH, pass an 'openssh-configuration'
                  ;; record as a second argument to 'service' below.
                  (service openssh-service-type)
-		 (service dhcp-client-service-type)
-		 (service tailscaled-service-type)
-		 )
+		 (service dhcp-client-service-type))
 
 	   ;; This is the list of services we
 	   ;; are appending to.

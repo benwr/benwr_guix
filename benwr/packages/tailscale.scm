@@ -1,4 +1,4 @@
-(define-module (packages tailscale)
+(define-module (benwr packages tailscale)
 	       #:use-module (guix packages)
 	       #:use-module (gnu packages linux)
 	       #:use-module (guix gexp)
