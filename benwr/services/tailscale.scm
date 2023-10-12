@@ -5,7 +5,6 @@
 	       #:use-module (guix records)
 	       #:use-module (guix gexp)
 	       #:use-module (ice-9 match)
-	       #:use-module (nongnu packages linux)
 	       #:use-module (benwr packages tailscale)
 	       #:export (tailscaled-service-type tailscaled-configuration))
 
