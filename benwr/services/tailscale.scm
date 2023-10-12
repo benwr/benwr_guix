@@ -5,8 +5,8 @@
 	       #:use-module (guix records)
 	       #:use-module (guix gexp)
 	       #:use-module (ice-9 match)
-	       #:use-module (benwr packages tailscale)
 	       #:use-module (nongnu packages linux)
+	       #:use-module (benwr packages tailscale)
 	       #:export (tailscaled-service-type tailscaled-configuration))
 
 ;; TODO: https://tailscale.com/kb/1188/linux-dns/#dhcp-dhclient-overwriting-etcresolvconf
