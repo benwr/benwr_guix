@@ -15,8 +15,8 @@
               (uri (string-append "https://pkgs.tailscale.com/stable/tailscale_" version
                                   "_amd64.tgz"))
               (sha256
-               (base32
-		 "0xmmpx34i9zsb48jg148fqm7xnldi63fdb3xll58y1xm1x46pznr"))))
+                (base32
+                  "0xmmpx34i9zsb48jg148fqm7xnldi63fdb3xll58y1xm1x46pznr"))))
     (build-system copy-build-system)
     (arguments
       (list
@@ -27,6 +27,6 @@
       (list iptables))
     (synopsis "Tailscale connects your team's devices and development environments for easy access to remote resources.")
     (description
-     "Tailscale is a zero config VPN for building secure networks. Install on any device in minutes. Remote access from any network or physical location.")
+      "Tailscale is a zero config VPN for building secure networks. Install on any device in minutes. Remote access from any network or physical location.")
     (home-page "https://tailscale.com/")
     (license #f)))
