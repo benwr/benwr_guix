@@ -5,6 +5,7 @@
   #:use-module (guix licenses)
   #:use-module (guix packages)
   #:use-module (gnu packages base)
+  #:use-module (gnu packages admin)
 )
 (define-public userherd
   (package
@@ -19,7 +20,7 @@
       (list
         #:install-plan
         #~`(("userherd/" "/bin/"))))
-    (propagated-inputs (list coreutils))
+    (propagated-inputs (list coreutils shepherd))
     (description "Run a GNU Shepherd instance for your user")
     (home-page "https://github.com/benwr/userherd")
     (synopsis "Run a GNU Shepherd instance for your user")

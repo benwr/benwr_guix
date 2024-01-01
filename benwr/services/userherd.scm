@@ -5,12 +5,13 @@
   #:use-module (guix gexp)
   #:use-module (guix records)
   #:use-module (gnu packages base)
+  #:use-module (gnu packages admin)
   #:use-module (benwr packages userherd)
   #:export (userherd-service-type)
 )
 
 (define (userherd-shepherd-service config)
-  (let ((environment #~(list (string-append "PATH=" (string-append #$coreutils "/bin") ":/run/setuid-programs"))))
+  (let ((environment #~(list (string-append "PATH=" #$coreutils "/bin:/run/setuid-programs:" #$shepherd "/bin"))))
     (map
       (lambda (user)
         (shepherd-service
