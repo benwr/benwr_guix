@@ -9,7 +9,7 @@
 (define-public userherd
   (package
     (name "userherd")
-    (version "0.1.1")
+    (version "0.1.2")
     (source (origin
               (method url-fetch/tarbomb)
               (uri (string-append "https://github.com/benwr/userherd/releases/download/" version "/userherd-" version ".tgz"))
