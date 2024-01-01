@@ -20,7 +20,7 @@
       (list
         #:install-plan
         #~`(("userherd/" "/bin/"))))
-    (propagated-inputs (list coreutils shepherd))
+    ; (propagated-inputs (list coreutils shepherd))
     (description "Run a GNU Shepherd instance for your user")
     (home-page "https://github.com/benwr/userherd")
     (synopsis "Run a GNU Shepherd instance for your user")
