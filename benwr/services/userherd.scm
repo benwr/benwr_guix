@@ -10,7 +10,7 @@
 )
 
 (define (userherd-shepherd-service config)
-  (let ((environment #~(list (string-append "PATH=" (string-append #$coreutils "/bin") ":/run/setuid-programs/sudo"))))
+  (let ((environment #~(list (string-append "PATH=" (string-append #$coreutils "/bin") ":/run/setuid-programs"))))
     (map
       (lambda (user)
         (shepherd-service
