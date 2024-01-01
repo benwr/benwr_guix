@@ -5,12 +5,8 @@
   #:use-module (guix gexp)
   #:use-module (guix records)
   #:use-module (benwr packages userherd)
-  #:export (userherd-service-type userherd-configuration)
+  #:export (userherd-service-type)
 )
-
-(define-record-type* <userherd-configuration>
-		     userherd-configuration make-userherd-configuration userherd-configuration?
-         (users userherd-configuration-users (default '())))
 
 (define (userherd-shepherd-service config)
   (map
@@ -22,11 +18,11 @@
         (stop #~(make-kill-destructor))
        )
       )
-    (users config)))
+    config))
 
 (define userherd-service-type
   (service-type
     (name 'userherd)
     (extensions (list (service-extension shepherd-root-service-type userherd-shepherd-service)))
-    (default-value (userherd-configuration))
+    (default-value '())
     (description "Launch userherd")))
