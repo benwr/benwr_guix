@@ -3,6 +3,7 @@
   #:use-module (gnu services shepherd)
   #:use-module (gnu services configuration)
   #:use-module (guix gexp)
+  #:use-module (guix records)
   #:use-module (benwr packages userherd)
   #:export (userherd-service-type userherd-configuration)
 )
