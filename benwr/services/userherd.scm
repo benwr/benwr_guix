@@ -1,7 +1,10 @@
 (define-module (benwr services userherd)
   #:use-module (gnu services)
   #:use-module (gnu services shepherd)
+  #:use-module (gnu services configuration)
+  #:use-module (guix gexp)
   #:use-module (benwr packages userherd)
+  #:export (userherd-service-type userherd-configuration)
 )
 
 (define-record-type* <userherd-configuration>
@@ -18,8 +21,7 @@
         (stop #~(make-kill-destructor))
        )
       )
-    config
-    ))
+    (users config)))
 
 (define userherd-service-type
   (service-type
