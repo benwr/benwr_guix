@@ -19,7 +19,7 @@
           (start #~(make-forkexec-constructor
                      (list #$(file-append userherd "/bin/userherd") #$user)
                      #:log-file "/var/log/userherd.log"
-                     #:environment-variables environment))
+                     #:environment-variables #$environment))
           (stop #~(make-kill-destructor))
          ))
       config)))
