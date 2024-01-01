@@ -9,16 +9,19 @@
 )
 
 (define (userherd-shepherd-service config)
-  (map
-    (lambda (user)
-      (shepherd-service
-        (provision (list (symbol-append 'userherd- (string->symbol user))))
-        (requirement '(user-processes))
-        (start #~(make-forkexec-constructor (list #$(file-append userherd "/bin/userherd") #$user) #:log-file "/var/log/userherd.log"))
-        (stop #~(make-kill-destructor))
-       )
-      )
-    config))
+  (let ((environment #~(list (string-append "PATH=" (string-append #$coreutils "/bin") ":/run/setuid-programs/sudo"))))
+    (map
+      (lambda (user)
+        (shepherd-service
+          (provision (list (symbol-append 'userherd- (string->symbol user))))
+          (requirement '(user-processes))
+          (start #~(make-forkexec-constructor
+                     (list #$(file-append userherd "/bin/userherd") #$user)
+                     #:log-file "/var/log/userherd.log"
+                     #:environment-variables environment))
+          (stop #~(make-kill-destructor))
+         ))
+      config)))
 
 (define userherd-service-type
   (service-type
