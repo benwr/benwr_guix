@@ -19,4 +19,5 @@
     (inputs (list sudo))
     (description "Run a GNU Shepherd instance for your user")
     (home-page "https://github.com/benwr/userherd")
+    (synopsis "Run a GNU Shepherd instance for your user")
     (license cc0)))
