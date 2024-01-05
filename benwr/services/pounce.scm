@@ -12,8 +12,8 @@
     (provision (list (symbol-append 'pounce- (string->symbol network))))
     (requirement '(networking))
     (start #~(make-forkexec-constructor
-               (list #$(file-append pounce "/bin/pounce") (string-append "/var/etc/"))
-               #:log-file (string-append "/var/log/pounce-" network ".conf")))
+               (list #$(file-append pounce "/bin/pounce") (string-append "/var/etc/" #$network))
+               #:log-file (string-append "/var/log/pounce-" #$network ".log")))
     (stop #~(make-kill-destructor))
   )) config))
 
