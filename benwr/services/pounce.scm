@@ -9,7 +9,7 @@
 
 (define (pounce-shepherd-service config)
   (map (lambda (network) (shepherd-service
-    (provision (symbol-append 'pounce- (string->symbol network)))
+    (provision (list (symbol-append 'pounce- (string->symbol network))))
     (requirement '(networking))
     (start #~(make-forkexec-constructor
                (list #$(file-append pounce "/bin/pounce") (string-append "/var/etc/"))
