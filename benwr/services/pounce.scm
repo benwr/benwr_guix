@@ -19,6 +19,6 @@
 
 (define pounce-service-type (service-type
   (name 'pounce)
-  (extensions (list (service-extensions shepherd-root-service-type pounce-shepherd-service)))
+  (extensions (list (service-extension shepherd-root-service-type pounce-shepherd-service)))
   (default-value '())
   (description "Launch pounce.")))
