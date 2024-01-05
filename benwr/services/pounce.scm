@@ -2,8 +2,8 @@
   #:use-module (gnu services)
   #:use-module (gnu services shepherd)
   #:use-module (gnu services configuration)
+  #:use-module (gnu packages messaging)
   #:use-module (guix gexp)
-  #:use-module (guix packages messaging)
   #:export (pounce-service-type)
 )
 
