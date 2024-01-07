@@ -19,7 +19,7 @@
           (requirement '(user-processes))
           (start #~(make-forkexec-constructor
                      (list #$(file-append userherd "/bin/userherd") #$user)
-                     #:log-file (string-append "/var/log/userherd-" user ".log")
+                     #:log-file (string-append "/var/log/userherd-" #$user ".log")
                      #:environment-variables #$environment))
           (stop #~(make-kill-destructor))
          ))
