@@ -10,9 +10,9 @@
 (define (pounce-shepherd-service config)
   (map (lambda (network) (shepherd-service
     (provision (list (symbol-append 'pounce- (string->symbol network))))
-    (requirement '(networking))
+    (requirement '(networking tailscaled file-systems))
     (start #~(make-forkexec-constructor
-               (list #$(file-append pounce "/bin/pounce") (string-append "/etc/pounce/" #$network ".conf"))
+               (list "sh" "-c" (string-append "sleep 10; " #$(file-append pounce "/bin/pounce") " /etc/pounce/" #$network ".conf"))
                #:log-file (string-append "/var/log/pounce-" #$network ".log")))
     (stop #~(make-kill-destructor))
   )) config))
