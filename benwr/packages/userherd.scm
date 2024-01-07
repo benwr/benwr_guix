@@ -14,7 +14,7 @@
     (source (origin
               (method url-fetch/tarbomb)
               (uri (string-append "https://github.com/benwr/userherd/releases/download/" version "/userherd-" version ".tgz"))
-              (sha256 (base32 "05mzzhywl8w34m9sskiwccfx8602z365l3rnsphmgykmnh0q0d2q"))))
+              (sha256 (base32 "0s746c099pm85z56md49lqmkvq1zlna02ybg2j85av87ak1hf2xr"))))
     (build-system copy-build-system)
     (arguments
       (list
