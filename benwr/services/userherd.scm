@@ -11,7 +11,7 @@
 )
 
 (define (userherd-shepherd-service config)
-  (let ((environment #~(list (string-append "PATH=" #$coreutils "/bin:/run/setuid-programs:" #$shepherd "/bin"))))
+  (let ((environment #~(list (string-append "PATH=" #$coreutils "/bin:/run/setuid-programs:" #$shepherd "/bin:" #$daemontools "/bin"))))
     (map
       (lambda (user)
         (shepherd-service
@@ -19,7 +19,7 @@
           (requirement '(user-processes))
           (start #~(make-forkexec-constructor
                      (list #$(file-append userherd "/bin/userherd") #$user)
-                     #:log-file "/var/log/userherd.log"
+                     #:log-file (string-append "/var/log/userherd-" user ".log")
                      #:environment-variables #$environment))
           (stop #~(make-kill-destructor))
          ))

@@ -10,7 +10,7 @@
 (define-public userherd
   (package
     (name "userherd")
-    (version "0.1.3")
+    (version "0.2.0")
     (source (origin
               (method url-fetch/tarbomb)
               (uri (string-append "https://github.com/benwr/userherd/releases/download/" version "/userherd-" version ".tgz"))
@@ -20,7 +20,7 @@
       (list
         #:install-plan
         #~`(("userherd/" "/bin/"))))
-    ; (propagated-inputs (list coreutils shepherd))
+    (propagated-inputs (list coreutils shepherd daemontools))
     (description "Run a GNU Shepherd instance for your user")
     (home-page "https://github.com/benwr/userherd")
     (synopsis "Run a GNU Shepherd instance for your user")
