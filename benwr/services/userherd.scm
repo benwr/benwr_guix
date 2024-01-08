@@ -16,7 +16,7 @@
       (lambda (user)
         (shepherd-service
           (provision (list (symbol-append 'userherd- (string->symbol user))))
-          (requirement '(user-processes))
+          (requirement '(user-processes pam elogind))
           (start #~(make-forkexec-constructor
                      (list #$(file-append userherd "/bin/userherd") #$user)
                      #:log-file (string-append "/var/log/userherd-" #$user ".log")
