@@ -21,7 +21,7 @@
              "https://github.com/Tarsnap/tarsnap/archive/"
              version ".tar.gz"))
        (sha256
-        (base32 "0b91k0sg64nxidvgzpip5a1rz0cwmygsfr13ac1q7zmd59iz1cz2"))
+        (base32 "12shph48wdlx2q5hs1hqk9g1gbrgk4vxyrw6sjv3wiqqwahg0jdj"))
        (patches
         (search-patches "tarsnap-Do-not-use-command-p-in-Makefile.patch"))))
     ;; This official release includes a configure script but it will
