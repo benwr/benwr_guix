@@ -1,4 +1,4 @@
-(define-module (tarsnap packages tarsnap)
+(define-module (benwr packages tarsnap)
   #:use-module (gnu packages)
   #:use-module (gnu packages autotools)
   #:use-module (gnu packages compression)
