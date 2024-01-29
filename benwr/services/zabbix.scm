@@ -22,7 +22,7 @@
                         (chmod directory #o755)))
                     (list "/var/log/zabbix/zabbix-agent.log" "/var/run/zabbix/zabbix.pid"))))))
 
-(define (zabbix-agent-account config)
+(define (zabbix-account config)
   (list
     (user-group (name "zabbix") (system? #t))
     (user-account
