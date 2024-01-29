@@ -57,6 +57,6 @@
   (extensions
     (list (service-extension shepherd-root-service-type zabbix-shepherd-service)
           (service-extension account-service-type zabbix-account)
-          (ervice-extension activation-service-type zabbix-activation)))
+          (service-extension activation-service-type zabbix-activation)))
   (default-value '())
   (description "Launch zabbix")))
