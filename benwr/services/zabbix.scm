@@ -41,7 +41,7 @@
     (requirement '(networking tailscaled file-systems user-processes))
     (documentation "Run Zabbix agent daemon")
     (start #~(make-forkexec-constructor
-               (list #$(file-append zabbix-agentd "/sbin/zabbix-agentd") "--foreground" "--config" "/etc/zabbix/zabbix-agentd.conf")
+               (list #$(file-append zabbix-agentd "/sbin/zabbix_agentd") "--foreground" "--config" "/etc/zabbix/zabbix-agentd.conf")
                #:user "zabbix"
                #:group "zabbix"
                #:environment-variables (list
